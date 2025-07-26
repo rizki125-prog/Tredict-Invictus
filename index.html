@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tredict Invictus Website</title>
+  <style>
+    body {
+      background-color: #0b0f1a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #11182b;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    h2 {
+      color: #00ffff;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 5px;
+      padding: 12px 15px;
+      background: #1a1f3c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00f7ff88;
+    }
+
+    .btn:hover {
+      background: #00d4ff;
+      color: #000;
+    }
+
+    .status, .info {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .logout {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ff4d4d;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .support {
+      margin-top: 15px;
+      color: #00ffff;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="logout">Logout</div>
+
+  <div class="container">
+    <h2>Tredict Invictus Website</h2>
+    <input type="text" id="nomor" placeholder="628xxxxxxx" maxlength="15" />
+
+    <div>
+      <button class="btn" onclick="crash('android')">Crash Android</button>
+      <button class="btn" onclick="crash('iphone')">Crash iPhone</button>
+      <button class="btn" onclick="crash('delay')">Delay Mention</button>
+    </div>
+
+    <div class="status"><b>Status:</b> Server Aktif</div>
+    <div class="info"><b>Info:</b> Selamat datang, Selaxaja!</div>
+    
+    <footer>© Tredict Invictus</footer>
+    <div class="support">Support</div>
+  </div>
+
+  <script>
+    function crash(type) {
+      let nomor = document.getElementById("nomor").value;
+      if (!nomor.startsWith("62")) {
+        alert("Nomor harus diawali 62 (Indonesia)");
+        return;
+      }
+
+      alert("Menjalankan crash: " + type + "\nKe nomor: " + nomor);
+      // Di sini kamu bisa tambahkan fetch ke API kamu, misalnya:
+      /*
+      fetch(`https://api-kamu.com/crash?type=${type}&target=${nomor}`)
+        .then(res => res.json())
+        .then(data => alert(data.message));
+      */
+    }
+  </script>
+</body>
+</html> 
